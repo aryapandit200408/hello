@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Arya's Portfolio</title>
+    <link rel="Stylesheet" href="Final.css">
+    <script src="https://kit.fontawesome.com/2471e62916.js" crossorigin="anonymous"></script>
+    <style>
+    *{
+        margin: 0px 10px;
+        padding: 0px;
+        font-family: "Calibri" , san-serif;
+        box-sizing: border-box;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        background: #000000;
+        color: #fff;
+    }
+    #header{
+        width: 100%;
+        height: 100vh;
+        background-image:url(images/background3.png);
+        background-size: cover ;
+        background-position: relative;
+    }
+    .container{
+        padding: 5px 5px;
+        margin: 10px 10px;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0%;
+    }
+    
+    .logo{
+        width: 15%;
+        margin-top: 10px;
+        border-radius: 30%;
+    }
+    
+    nav ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 0px 10px;
+    }
+    
+    nav ul li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 150%;
+        position: relative;
+    }
+    nav ul li a::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+    }
+    nav ul li a:hover:after{
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+    }
+    
+    .header-text{
+        margin-top: 10%;
+        margin-bottom: 20%;
+        font-size: 30px;
+    }
+    
+    .header-text h1{
+        font-size: 60px;
+        margin-top: 10px;
+    }
+    
+    .ap{
+        color: #12e4f3;
+        transition: text-decoration 0.5s;
+    }
+    .ap a{
+        content:'';
+        background-color: #000000;
+    }
+    .ap:hover a{
+        background: #d62727;
+        height: 3px;
+    }
+    
+    
+    
+    
+    .header-text p{
+        font-size: 20px;
+    }
+    
+    /* About */
+    #about{
+        flex: wrap;
+        margin-top: 50px;
+        padding: 30px 0;
+        color: #c6c6c6;
+    
+    }
+    
+    .row{
+        display: flex;
+        flex: wrap;
+    }
+    .col1 img{
+        width: 100%;
+        border: #d62727;
+        border-width: 3px;
+        border-radius: 10px;
+    }
+    
+    .col2{
+        font-family: "Gill Sans", sans-serif;
+        margin:20px;
+    }
+    .about h1{
+        position: relative;
+        font-style: normal;
+        color: #0cadde;
+        text-align: center;
+    
+    
+    }
+    .aboutme{
+        font-family: "Gill Sans", sans-serif;
+        position: relative;
+        font-style: normal;
+        font-size: 18px;
+        text-align: center;
+    
+        color: #FFFFFF;
+    }
+    
+    #Skillsets{
+        padding: 50px 0px;
+        margin-top: 100px;
+    
+    }
+    .sub-title{
+        font-size: 50px;
+        color:#0cadde;
+        text-align: center;
+        transition: 0.5s;
+    }
+    .sub-title:hover{
+        text-decoration: underline;
+        color:#45ff61;
+        background-blend-mode: color-burn;
+    
+    }
+    .skills-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+    
+    .skills{
+        border-radius: 10px;
+        position: relative;
+        overflow: hodden;
+    }
+    
+    .skills img{
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.5s ;
+    }
+    
+    .layer1{
+        width: 100%;
+        height: 0;
+        background: linear-gradient(rgb(0,0,0,0.6),#00ffd5);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        transition: height 0.5s;
+    }
+    
+    .layer1 a{
+        margin-top: 20px;
+        color: #ff004f;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+    }
+    
+    .skills:hover img{
+        transform: scale(1.1);
+    }
+    
+    .skills:hover .layer1{
+        height: 100%;
+    }
+    
+    .btn{
+        display:block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 1px solid #0290ad;
+        padding: 14px 50px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.5s;
+    }
+    
+    .btn:hover{
+        background: #0a8a32;
+    }
+    
+    
+    
+    .project-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 20px;
+    }
+    
+    .projects{
+        border-radius: 10px;
+        position: relative;
+        overflow: hodden;
+    }
+    
+    .projects img{
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+        transition: transform 0.5s ;
+    }
+    
+    .layer{
+        width:100%;
+        height:0%;
+        background: linear-gradient(rgb(0,0,0,0.6),#ff004f);
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        transition: height 0.5s;
+    }
+    
+    .layer a{
+        margin-top: 20px;
+        color: #ff004f;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 60px;
+        background: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+    }
+    
+    .projects:hover img{
+        transform: scale(1.1);
+    }
+    
+    .projects:hover .layer{
+        height: 100%;
+    }
+    
+    .btn{
+        display:block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 1px solid #0290ad;
+        padding: 14px 50px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.5s;
+    }
+    
+    .btn:hover{
+        background: #0a8a32;
+    }
+    
+    #Achievements{
+        margin: 50px;
+    
+    }
+    .contact-left{
+        flex-basis: 35%;
+    }
+    
+    .contact-right{
+        flex-basis: 60%;
+    }
+    
+    .contact-left p{
+        margin-top:30px;
+    }
+    
+    .contact-left p i{
+        color: #08e2ff;
+        margin-right: 15px;
+        font-size: 25px;
+    
+    }
+    .social-icons{
+        margin-top: 30px;
+    }
+    .social-icons a{
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #ababab;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+    
+    .social-icons a:hover{
+        color:#18e4e8;
+        transform: translateY(-5px)
+    }
+    .btn.btn2{
+        display: inline-block;
+        background :#353535;
+    }
+    .btn.btn2:hover{
+        background :#08a7f6;
+    }
+    
+    .contact-right form{
+        width: 100%;
+    }
+    form input, form textarea{
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin: 15px;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+    }
+    
+    form .btn3{
+        padding: 14px 60px;
+        padding-block-end: 300px;
+        width: 10px;
+        font-size: 18px;
+        margin-top: 20px;
+        color: "grey";
+        cursor: pointer;
+    }
+    
+    .copyright{
+        width: 100%;
+        text-align: center;
+        padding: 25px 0;
+        background: #262626;
+        font-weight: 300;
+        margin-top: 20px;
+    }
+    
+    .copyright i{
+        color:#f50288;
+    }
+    
+    
+    
+    ----Small Screens---
+    media only screen and {max-width: 600px}</style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav> 
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Achievements">Achievements</a></li>
+                    <li><a href="#Contact">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class = "header-text">
+                <h1>Hi, I'm <span class="ap"> Arya Pandit<a></a></span></h1>
+                <p>Batch of '26, ETCE at Jadavpur University</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="About">
+        
+        <div class="row">
+            <div class="col1">
+                <img src="images/profile2.jpg" width="90%">
+            </div>
+            <div class="col2">
+                <div class="sub-title"> 
+                    <p> <b>About </b></p>
+                </div>
+                <div class="aboutme">
+                    <p>I am currently a 2nd Semester student, at the Dept. of Electronics and Telecommunications Engineering, Jadavpur University.
+                        My passions lie in the fields of Artificial Intelligence and Robotics. 
+                        I have sound knowledge of coding in C, C++ and Python;
+                        CAD Designing in OnShape; UI/UX Design at Figma.
+                    </p>
+                </div>
+                <br><br>
+                <div class="education">
+                    <h2> Education </h2>
+                    <ul type="disc">
+                        <li>
+                            <h3>Jadavpur University</h2>
+                            <h4>Bachelor of Engineering in Electrinonics and Telecommunications (2022- 2026)</h3>
+                        </li>
+                        <li>
+                            <h3>Bhavans Gangabux Kanoria Vidyamandir  </h1>
+                            <p><b>Secondary and Primary Education (2008-2022) </b></p>
+                            <p>AICSSE 2022 97%</p>
+                            <P>AISSE 2002 97.4%</P>
+                        </li>
+                    </ul>
+                </div>
+                <br> <br>
+                
+            </div>
+        </div>    
+    </div>
+
+    <br><br>
+    <div id="Skills">
+        <div class="container">
+            <h2 class="sub-title">My Skills</h2>
+            <div class="skills-list">
+                <div class="skills">
+                    <img src="images/coding.png">
+                    <div class="layer1">
+                        <h3>Coding</h3>
+                        <p><ul type="disc">
+                            <li>Python</li>
+                            <li>C/C++</li>
+                        </ul>
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="skills">
+                    <img src="images/uiux.png">
+                    <div class="layer1">
+                        <h3>UI/UX Design</h3>
+                        <p><li>Figma</li>
+                            <li>Canva</li>
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="skills">
+                    <img src="images/web.png">
+                    <div class="layer1">
+                        <h3>Website Developemenr</h3>
+                        <p><ul type="disc">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                        </ul>
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="skills">
+                    <img src="images/cad.png">
+                    <div class="layer1">
+                        <h3>Website Developement</h3>
+                        <p><ul type="disc">
+                            <li>Fritzing</li>
+                            <li>Onshape</li>
+                        </ul>
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="skills">
+                    <img src="images/aiml.png">
+                    <div class="layer1">
+                        <h3>Artificial Intelligence and Machine Learning</h3>
+                        <p><ul type="disc">
+                            <li>Completed a 6 months certificate course from CMATER Lab, JU</li>
+                        </ul>
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <a href="images/Profile.pdf" download class="btn bt2">Download CV</a>
+
+    </div>
+    
+    <div id="Projects">
+        <div class="container">
+            <h2 class="sub-title">My Projects</h2>
+            <div class="project-list">
+                <div class="projects">
+                    <img src="images/RIZZMobile.jpeg">
+                    <div class="layer">
+                        <h3>RIZZMobile</h3>
+                        <p>All terrain RC-bot implemented using arduino 
+                            with a connection range of 20 meters
+                        </p>
+                        <a href-"#"> <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="projects">
+                    <img src="images/linefollower.webp">
+                    <div class="layer">
+                        <h3>Line Follower Robot</h3>
+                        <p>A fast and agile PID line follower robot
+                        </p>
+                        <a href-"#"> <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="projects">
+                    <img src="images/Agrow.png">
+                    <div class="layer">
+                        <h3>Agrow Farming Solutions</h3>
+                        <p>A full precision faming consultacy app that
+                            would revolutionise intensive farming in India
+                        </p>
+                        <a href-"#"> <i class="fa-solid fa-link"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <br><br><br>
+    <div id="Achievements">
+        <div class="container">
+            <h2 class="sub-title">
+                Achievememts
+            </h2>
+            <br><br>
+            <h4><p>
+                <ul>
+                    <li>
+                        Won Pitchgenix Organised by E-Cell,                      
+                    </li>
+                    <li>
+                        Cleared Prelims of DoubleSlash organised by IEEE JU SB,
+                    </li>
+                    <li>
+                        Our Team RIZZMobile was named the joint winners of 
+                        in 'Highway to Hell' event in  Srijan'23 
+                    </li>
+                    <li>
+                        Our Team Golondaaj was the Winner of the Electrosoccer 
+                        Smash Up Event in Srijan '23
+                    </li>
+                </ul>
+            </p> </h4>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <div id="Contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">
+                        Contact Me
+                    </h1>
+                    <p><i class="fa-solid fa-envelope"></i>
+                        aryapandit200408@gmail.com
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>+91 94322 47499
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100085243396208"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/superstitious_ap/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/arya-pandit-146023250/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+
+                    </div>
+                </div>                
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>
+                Made by Arya with <i class="fa-solid fa-heart"></i>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
